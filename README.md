@@ -34,6 +34,12 @@ class HomeController extends Controller
   }
 }
 ```
+#### Update the session for Shopify frame
+```
+config/session.php
+'secure'	=> true
+'same_site'	=> 'none'
+```
 ### Usage: 
 #### Communicate with API token:
 ```
