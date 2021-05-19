@@ -29,7 +29,8 @@ class HomeController extends Controller
     if( !$this->hashCheck($request) ) abort(403,"No Access Token Found");
     //Hash check success, means it came from Shopify APP.
     //Build your login code from here
-    return redirect()->to('/admin');
+    //Auth::loginUsingId(1); //Like login a user or an admin backend.
+    //return redirect()->to('/admin');
   }
 }
 ```
