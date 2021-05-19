@@ -12,6 +12,12 @@ trait ShopifyInstallTrait {
  	protected $token_file = "access_token.txt";
  	protected $store_domain = "store_domain.txt";
 
+ 	function loadShopDomain(){
+ 		if( !file_exists(storage_path()."/".$this->store_domain) ) abort(403,"Please re-install the APP");
+ 		$fp = fopen(storage_path()."/".$this->store_domain,"r");
+		return fread($fp,1000);
+ 	}
+ 	
  	function loadAccessToken(){
  		if( !file_exists(storage_path()."/".$this->token_file) ) abort(403,"Please re-install the APP");
  		$fp = fopen(storage_path()."/".$this->token_file,"r");
